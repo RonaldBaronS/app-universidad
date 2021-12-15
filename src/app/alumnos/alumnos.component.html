@@ -1,0 +1,45 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Alumnos</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de Alumno</h5>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/alumnos/formalu']">
+          Crear Alumno
+        </button>
+      </div>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>idAlumno</th>
+            <th>codigo</th>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>semestre</th>
+            <th>carrera</th>
+            <th>
+              editar
+            </th>
+            <th>eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let alumno of alumnos">
+            <td>{{ alumno.idAlumno }}</td>
+            <td>{{ alumno.codigoAlumno}}</td>
+            <td>{{ alumno.nombreAlumno}}</td>
+            <td>{{ alumno.apellidoAlumno }}</td>
+            <td>{{ alumno.semestreAlumno}}</td>
+            <td>{{ alumno.carrera}}</td>
+            <td>
+              <button type="button" name="editar" [routerLink]="['/alumnos/formalu', alumno.idAlumno]" class="btn btn-primary btn-sm">editar</button>
+            </td>
+            <td>
+              <button type="button" name="eliminar" (click)='delete(alumno)' class="btn btn-danger btn-sm">eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
+  

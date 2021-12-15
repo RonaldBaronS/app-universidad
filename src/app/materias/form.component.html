@@ -1,0 +1,35 @@
+<div class="card bg-dark text-white">
+    <div class="card-header">{{ titulo }}</div>
+    <div class="card-body">
+  
+      <form>
+
+        <div class="form-group row">
+          <label for="nombreMateria" class="col-form-label col-sm-2">Nombre</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="materia.nombreMateria" name="nombreMateria">
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label for="creditoMateria" class="col-form-label col-sm-2">Créditos</label>
+          <div class="col-sm-6">
+            <input type="number" class="form-control" [(ngModel)]="materia.creditoMateria" name="creditoMateria">
+          </div>
+        </div>
+  
+  
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!materia.id else elseBlock">Crear</button>
+  
+            <ng-template #elseBlock>
+              <button class="btn btn-primary" role="button" (click)='update()'>Editar</button>
+            </ng-template>
+          </div>
+        </div>
+      </form>
+  
+    </div>
+  </div>
+  

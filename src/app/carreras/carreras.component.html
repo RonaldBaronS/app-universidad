@@ -1,0 +1,39 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Carreras</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de carreras</h5>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/carreras/form']">
+          Crear Carrera
+        </button>
+      </div>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>tiempo</th>
+            <th>
+              editar
+            </th>
+            <th>eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let carrera of carreras">
+            <td>{{ carrera.id }}</td>
+            <td>{{ carrera.nombreCarrera}}</td>
+            <td>{{ carrera.tiempoCarrera}}</td>
+            <td>
+              <button type="button" name="editar" [routerLink]="['/carreras/form', carrera.id]" class="btn btn-primary btn-sm">editar</button>
+            </td>
+            <td>
+              <button type="button" name="eliminar" (click)='delete(carrera)' class="btn btn-danger btn-sm">eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
+  

@@ -1,0 +1,39 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Materias 2021</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de Cursos</h5>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/materias/form']">
+          Crear Materias
+        </button>
+      </div>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>creditos</th>
+            <th>
+              editar
+            </th>
+            <th>eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let materia of materias">
+            <td>{{ materia.id }}</td>
+            <td>{{ materia.nombreMateria}}</td>
+            <td>{{ materia.creditoMateria}}</td>
+            <td>
+              <button type="button" name="editar" [routerLink]="['/materias/form', materia.id]" class="btn btn-primary btn-sm">editar</button>
+            </td>
+            <td>
+              <button type="button" name="eliminar" (click)='delete(materia)' class="btn btn-danger btn-sm">eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
+  
